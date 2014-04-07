@@ -4,34 +4,6 @@
  * and open the template in the editor.
  */
 
-
-//  function prepData(range, amount){
-//
-//        var arr = new Array(amount);
-//            for(var i=0;i<amount;i++){
-//            arr[i]=(Math.random()-0.5)*range;
-//        }
-//            return arr;
-//}
-
-//function comenzar(){
-    alert("Hola mundo");
-//    var myp = new MakeDraw();
-//    myp.id="canv";
-//    myp.plotColor = 'rgba(200,232,53,1)';
-//    myp.gridColor = 'rgba(0,0,0,0,05)';
-//    myp.fSize=15;
-//    myp.enumerateP=0;
-//    myp.enumerateB=0;
-//    myp.enumerateV=1;
-//
-//    var ilosc =200;
-//    var data = prepData(10, ilosc);
-//
-//
-//    myp.data = data;
-//    myp.plot();
-    
     function recalc(){
         var randomJump = Math.random()*10;
         for(var i = 0; i<ilosc;i++){
@@ -52,7 +24,7 @@
         }
         return arr;
     }
-//    function begin(){
+
         var ilosc = 200;
         var myp = new MakeDraw();
         var data = prepData(10,ilosc);
@@ -66,6 +38,3 @@
         myp.enumerateV=1;
 
         var y = setInterval('recalc()',20);
-//    }
-    
-//}
