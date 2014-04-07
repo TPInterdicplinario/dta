@@ -5,11 +5,24 @@
     <h:head>
         <title>Facelet Title</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
+        <script src="js/plot.js"></script>
+        <script src="js/codigo.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     </h:head>
     <h:body>
         Hello from Facelets
         <br />
         <h:link outcome="/process/List" value="Show All Process Items"/>
+        <script>
+                $(function (){
+                begin();                   
+                    
+                });
+            
+        </script>
+        
+        <canvas width="600" height="500"  id="canv"></canvas>
     </h:body>
 
 </html>
