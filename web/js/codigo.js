@@ -30,7 +30,7 @@
         var data = prepData(10,ilosc);
 
         myp.id="canv";
-        myp.plotColor ='rgba(200,232,53,1)';
+        myp.plotColor ='green';
         myp.gridColor ='rgba(0,0,0,0.05)';
         myp.fSize=15;
         myp.enumerateP=0;
