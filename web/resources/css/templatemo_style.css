@@ -540,6 +540,22 @@ img {
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
 }
+.templatemo_bottom_our	{ 
+	padding: 1px 0px; 
+	width: 100%; 
+	}
+.templatemo_bottom_our .right_our div.soc {
+	width: 28px;
+	height: 28px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 28px;
+	background: #c6cfd3;
+	color: #333536;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
 
 .templatemo_bottom .right a:hover div.soc{
 	background: #72b842;

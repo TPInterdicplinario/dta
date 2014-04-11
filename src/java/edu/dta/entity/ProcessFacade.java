@@ -26,4 +26,8 @@ public class ProcessFacade extends AbstractFacade<Process> {
         super(Process.class);
     }
     
+    public Process findByState(boolean state){
+        return (Process) getEntityManager().createNamedQuery("Process.findByState", Process.class);        
+    }
+    
 }

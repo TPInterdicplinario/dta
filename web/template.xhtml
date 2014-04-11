@@ -59,6 +59,7 @@
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <link rel="stylesheet" href="../resources/css/table.css"/>
+        <link rel="stylesheet" href="../resources/css/formGreen.css"/>
     </h:head>
     <h:body>
         <header>
@@ -69,17 +70,17 @@
                         <div class="row">
                             <div class="col-sm-3 col-md-3">
                                 <div class="logo">
-                                    <a rel="nofollow" href="#"><img src="../resources/images/templatemo_logo.png" alt="logo"/></a>
+                                    <h:link outcome="/index"><img src="../resources/images/templatemo_logo.png" alt="logo"/></h:link>
                                 </div>
                             </div>
                             <div class="col-sm-9 col-md-9 templatemo_col9">
                                 <div id="top-menu">
                                     <nav class="mainMenu">
                                         <ul class="nav">
-                                            <li><a class="menu" href="#templatemo_home">Home</a></li>
-                                            <li><a class="menu" href="#templatemo_about">About</a></li>
-                                            <li><a class="menu" href="#templatemo_portfolio">Process</a></li>
-                                            <li><a class="menu" href="#templatemo_contact">Contact</a></li>
+                                            <li><h:link outcome="/index">Home</h:link></li>
+                                            <li><h:link outcome="/About">About</h:link></li>
+                                            <li><h:link outcome="/process/List">Process</h:link></li>
+                                            <li><h:link outcome="/Contact">Contact</h:link></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -95,17 +96,8 @@
             <!--templatemo_lightgrey-->
             <div class="container">
                 <div class="item project-post">
-                    <div class="templatemo_about_box">
-                        <h1>
-                            <ui:insert name="title">Default Title</ui:insert>
-                        </h1>
-                    </div>
-                    
-                    <div class="templatemo_about_box" >
-                        <div class="clear" style="margin-left: 100px">
+                            <ui:insert name="titleBody">Default Title</ui:insert>             
                             <ui:insert name="body" >Default Body</ui:insert>
-                        </div>
-                    </div>
                 </div>
             </div>  
         </div>

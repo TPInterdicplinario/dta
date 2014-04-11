@@ -69,7 +69,13 @@ public class ProcessController implements Serializable {
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
-
+    
+    public String prepareIndex() {
+        current = (Process) getProcessByState(Boolean.TRUE);
+        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        return "Index";
+    }
+    
     public String prepareCreate() {
         current = new Process();
         selectedItemIndex = -1;
@@ -189,6 +195,10 @@ public class ProcessController implements Serializable {
         return ejbFacade.find(id);
     }
 
+    public Process getProcessByState(java.lang.Boolean state) {
+        return ejbFacade.findByState(state);
+    }
+    
     @FacesConverter(forClass = Process.class)
     public static class ProcessControllerConverter implements Converter {
 

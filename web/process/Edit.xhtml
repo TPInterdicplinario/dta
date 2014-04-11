@@ -9,41 +9,39 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditProcessTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditProcessLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{processController.selected.id}" title="#{bundle.EditProcessTitle_id}" />
-                    <h:outputLabel value="#{bundle.EditProcessLabel_maxTemp}" for="maxTemp" />
-                    <h:inputText id="maxTemp" value="#{processController.selected.maxTemp}" title="#{bundle.EditProcessTitle_maxTemp}" />
-                    <h:outputLabel value="#{bundle.EditProcessLabel_targetTemp}" for="targetTemp" />
-                    <h:inputText id="targetTemp" value="#{processController.selected.targetTemp}" title="#{bundle.EditProcessTitle_targetTemp}" />
-                    <h:outputLabel value="#{bundle.EditProcessLabel_sterilizationTime}" for="sterilizationTime" />
-                    <h:inputText id="sterilizationTime" value="#{processController.selected.sterilizationTime}" title="#{bundle.EditProcessTitle_sterilizationTime}" />
-                    <h:outputLabel value="#{bundle.EditProcessLabel_itemDescription}" for="itemDescription" />
-                    <h:inputText id="itemDescription" value="#{processController.selected.itemDescription}" title="#{bundle.EditProcessTitle_itemDescription}" />
-                    <h:outputLabel value="#{bundle.EditProcessLabel_userDescription}" for="userDescription" />
-                    <h:inputText id="userDescription" value="#{processController.selected.userDescription}" title="#{bundle.EditProcessTitle_userDescription}" />
-                    <h:outputLabel value="#{bundle.EditProcessLabel_temp}" for="temp" />
-                    <h:inputText id="temp" value="#{processController.selected.temp}" title="#{bundle.EditProcessTitle_temp}" />
-                    <h:outputLabel value="#{bundle.EditProcessLabel_initialDate}" for="initialDate" />
-                    <h:inputText id="initialDate" value="#{processController.selected.initialDate}" title="#{bundle.EditProcessTitle_initialDate}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                </h:panelGrid>
-                <h:commandLink action="#{processController.update}" value="#{bundle.EditProcessSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditProcessViewLink}"/>
-                <br />
-                <h:commandLink action="#{processController.prepareList}" value="#{bundle.EditProcessShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditProcessIndexLink}" />
-            </h:form>
+        <ui:define name="titleBody">
+            <div class="templatemo_about_box">
+                <h1><h:outputText value="#{bundle.EditProcessTitle}"></h:outputText></h1>
+            </div>
+        </ui:define>
+        <ui:define name="body"> 
+            <div class="templatemo_about_box" >
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:form styleClass="smart-green">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="#{bundle.EditProcessLabel_maxTemp}" for="maxTemp" />
+                        <h:inputText id="maxTemp" value="#{processController.selected.maxTemp}" title="#{bundle.EditProcessTitle_maxTemp}" />
+                        <h:outputLabel value="#{bundle.EditProcessLabel_targetTemp}" for="targetTemp" />
+                        <h:inputText id="targetTemp" value="#{processController.selected.targetTemp}" title="#{bundle.EditProcessTitle_targetTemp}" />
+                        <h:outputLabel value="#{bundle.EditProcessLabel_sterilizationTime}" for="sterilizationTime" />
+                        <h:inputText id="sterilizationTime" value="#{processController.selected.sterilizationTime}" title="#{bundle.EditProcessTitle_sterilizationTime}" />
+                        <h:outputLabel value="#{bundle.EditProcessLabel_itemDescription}" for="itemDescription" />
+                        <h:inputText id="itemDescription" value="#{processController.selected.itemDescription}" title="#{bundle.EditProcessTitle_itemDescription}" />
+                        <h:outputLabel value="#{bundle.EditProcessLabel_userDescription}" for="userDescription" />
+                        <h:inputText id="userDescription" value="#{processController.selected.userDescription}" title="#{bundle.EditProcessTitle_userDescription}" />
+                        <h:outputLabel value="#{bundle.EditProcessLabel_state}" for="state" />
+                        <h:inputText id="state" value="#{processController.selected.state}" title="#{bundle.EditProcessTitle_state}" />
+                        
+                    </h:panelGrid>
+                    <h:commandLink action="#{processController.update}" value="#{bundle.EditProcessSaveLink}"/>
+                    <br />
+                    <br />
+                    <h:link outcome="View" value="#{bundle.EditProcessViewLink}"/>
+                    <br />
+                </h:form>
+            </div>
         </ui:define>
     </ui:composition>
 

@@ -7,10 +7,13 @@ package edu.dta.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 
 /**
@@ -18,22 +21,32 @@ import javax.persistence.Temporal;
  * @author Camilo
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name="Process.findByState",
+                query="SELECT p FROM Process p WHERE p.state = :state"),
+    })
 public class Process implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(nullable = false)
     private double maxTemp;
+    @Column(nullable = false)
     private double targetTemp;
+    @Column(nullable = false)
     private double sterilizationTime;
     private String itemDescription;
     private String userDescription;
     private ArrayList<Double> temp;
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Temporal(javax.persistence.TemporalType.DATE)    
     private Date initialDate;
+    @Column(unique = true)
+    private boolean state;
     
     public Process(){
-       
+       initialDate = new Date();
+       state=true;
     }
     
     public Long getId() {
@@ -99,7 +112,15 @@ public class Process implements Serializable {
     public void setInitialDate(Date initialDate) {
         this.initialDate = initialDate;
     }
-       
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

@@ -6,48 +6,54 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/template.xhtml">
-        <ui:define name="title">
-            <h:outputText value="#{bundle.ViewProcessTitle}"></h:outputText>
-        </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewProcessLabel_id}"/>
-                    <h:outputText value="#{processController.selected.id}" title="#{bundle.ViewProcessTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewProcessLabel_maxTemp}"/>
-                    <h:outputText value="#{processController.selected.maxTemp}" title="#{bundle.ViewProcessTitle_maxTemp}"/>
-                    <h:outputText value="#{bundle.ViewProcessLabel_targetTemp}"/>
-                    <h:outputText value="#{processController.selected.targetTemp}" title="#{bundle.ViewProcessTitle_targetTemp}"/>
-                    <h:outputText value="#{bundle.ViewProcessLabel_sterilizationTime}"/>
-                    <h:outputText value="#{processController.selected.sterilizationTime}" title="#{bundle.ViewProcessTitle_sterilizationTime}"/>
-                    <h:outputText value="#{bundle.ViewProcessLabel_itemDescription}"/>
-                    <h:outputText value="#{processController.selected.itemDescription}" title="#{bundle.ViewProcessTitle_itemDescription}"/>
-                    <h:outputText value="#{bundle.ViewProcessLabel_userDescription}"/>
-                    <h:outputText value="#{processController.selected.userDescription}" title="#{bundle.ViewProcessTitle_userDescription}"/>
-                    <h:outputText value="#{bundle.ViewProcessLabel_temp}"/>
-                    <h:outputText value="#{processController.selected.temp}" title="#{bundle.ViewProcessTitle_temp}"/>
-                    <h:outputText value="#{bundle.ViewProcessLabel_initialDate}"/>
-                    <h:outputText value="#{processController.selected.initialDate}" title="#{bundle.ViewProcessTitle_initialDate}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{processController.destroyAndView}" value="#{bundle.ViewProcessDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewProcessEditLink}"/>
-                <br />
-                <h:commandLink action="#{processController.prepareCreate}" value="#{bundle.ViewProcessCreateLink}" />
-                <br />
-                <h:commandLink action="#{processController.prepareList}" value="#{bundle.ViewProcessShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewProcessIndexLink}"/>
 
-            </h:form>
+        <div class="templatemo_about_box">
+            <ui:define name="title">
+                <h:outputText value="#{bundle.ViewProcessTitle}"></h:outputText>
+            </ui:define>
+            <ui:define name="titleBody">
+                <div class="templatemo_about_box">
+                    <h1><h:outputText value="#{bundle.ViewProcessTitle}"></h:outputText></h1>
+                </div>
+            </ui:define>
+        </div>
+        <ui:define name="body">
+            <div class="templatemo_about_box" >
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:form styleClass="smart-green">
+                    <h:panelGrid columns="2"  style="margin-left: 80px;">
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_id}"/>
+                        <h:outputLabel value="#{processController.selected.id}" title="#{bundle.ViewProcessTitle_id}"/>
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_maxTemp}"/>
+                        <h:outputLabel value="#{processController.selected.maxTemp}" title="#{bundle.ViewProcessTitle_maxTemp}"/>
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_targetTemp}"/>
+                        <h:outputLabel value="#{processController.selected.targetTemp}" title="#{bundle.ViewProcessTitle_targetTemp}"/>
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_sterilizationTime}"/>
+                        <h:outputLabel value="#{processController.selected.sterilizationTime}" title="#{bundle.ViewProcessTitle_sterilizationTime}"/>
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_itemDescription}"/>
+                        <h:outputLabel value="#{processController.selected.itemDescription}" title="#{bundle.ViewProcessTitle_itemDescription}"/>
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_userDescription}"/>
+                        <h:outputLabel value="#{processController.selected.userDescription}" title="#{bundle.ViewProcessTitle_userDescription}"/>
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_state}"/>
+                        <h:outputLabel value="#{processController.selected.state}" title="#{bundle.ViewProcessTitle_state}"/>
+                        <h:outputLabel value="#{bundle.ViewProcessLabel_initialDate}"/>
+                        <h:outputLabel value="#{processController.selected.initialDate}" title="#{bundle.ViewProcessTitle_initialDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputLabel>
+                    </h:panelGrid>
+                    <br />
+                    <h:commandLink action="#{processController.destroyAndView}" value="#{bundle.ViewProcessDestroyLink}"/>
+                    <br />
+                    <br />
+                    <h:link outcome="Edit" value="#{bundle.ViewProcessEditLink}"/>
+                    <br />
+                    <h:commandLink action="#{processController.prepareList}" value="#{bundle.ViewProcessShowAllLink}"/>
+                    <br />
+
+                </h:form>
+            </div>
         </ui:define>
     </ui:composition>
 

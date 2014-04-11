@@ -74,10 +74,10 @@
                                 <div id="top-menu">
                                     <nav class="mainMenu">
                                         <ul class="nav">
-                                            <li><a class="menu" href="#templatemo_home">Home</a></li>
-                                            <li><a class="menu" href="#templatemo_about">About</a></li>
-                                            <li><a class="menu" href="#templatemo_portfolio">Process</a></li>
-                                            <li><a class="menu" href="#templatemo_contact">Contact</a></li>
+                                            <li><h:link outcome="/index">Home</h:link></li>
+                                            <li><h:link outcome="/About">About</h:link></li>
+                                            <li><h:link outcome="/process/List">Process</h:link></li>
+                                            <li><h:link outcome="/Contact">Contact</h:link></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -87,6 +87,32 @@
                 </div>
             </div>
             <div class="clear"></div>
+            <div  id="slider"  class="nivoSlider templatemo_slider">
+                <a href="#">
+                    <img src="resources/images/slider/img_1_blank.jpg" alt="slide 1" ></img>
+                </a>
+                <a href="#">
+                    <img src="resources/images/slider/img_2_blank.jpg" alt="slide 2" ></img>
+<!--                    <div class="templatemo_caption">
+                            <div class="templatemo_slidetitle">Retina Ready and Responsive</div>
+                            <div class="clear"></div>
+                            <h1>Free HTML5 Template</h1>
+                            <div class="clear"></div>
+                            <p>Smoothy is free <a href="http://www.tooplate.com" target="_parent">template</a> by templatemo. You may download, edit and use this layout for your website. Credit goes to <a rel="nofollow" href="http://unsplash.com">unsplash.com</a> for photos used in this template.</p>
+                            <a class="btn btn-large btn-primary" href="#">Read More</a>
+                        </div>-->
+                </a>
+                <a href="#"><img src="resources/images/slider/img_3_blank.jpg" alt="slide 3" /></a>
+
+            </div>
+<!--                <div class="templatemo_caption">
+                    <div class="templatemo_slidetitle">Retina Ready and Responsive</div>
+                    <div class="clear"></div>
+                    <h1>Free HTML5 Template</h1>
+                    <div class="clear"></div>
+                    <p>Smoothy is free <a href="http://www.tooplate.com" target="_parent">template</a> by templatemo. You may download, edit and use this layout for your website. Credit goes to <a rel="nofollow" href="http://unsplash.com">unsplash.com</a> for photos used in this template.</p>
+                    <a class="btn btn-large btn-primary" href="#">Read More</a>
+                </div>-->
         </header>
         <br /><br /><br />
         <div class="templatemo_reasonbg">
@@ -164,214 +190,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!--Our Portfolio Start-->
-        <div class="templatemo_portfolio" id="templatemo_portfolio">
-            <h2>Our process</h2>
-            <p>The process of production of biopolymers from polyhydroxyalkanoates (PHA's) has gained great importance among researchers and industrial biotechnology thanks to recent studies that promise to be a great alternative to replace conventional polymers. 
-This process consists of three major global sections: Sterilization, Fermentation and Separation.</p>
-
-            <div class="container">
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/1.jpg" alt="portfolio 1"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/1.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Blue Sky</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/2.jpg" alt="portfolio 2"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/2.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Forest</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/3.jpg" alt="portfolio 3"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/3.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Forest</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/4.jpg" alt="portfolio 4"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/4.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Black and White</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-            <div class="container">
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/5.jpg" alt="portfolio 5"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/5.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Rotary</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/6.jpg" alt="portfolio 6"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/6.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Rotary</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/7.jpg" alt="portfolio 7"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/7.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Blue Sky</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="portfolio-item">
-                        <div class="portfolio-thumb">
-                            <img src="resources/images/portfolio/8.jpg" alt="portfolio 8"/>
-                            <div class="overlay-p">
-                                <a href="resources/images/portfolio/8.jpg" data-rel="lightbox[portfolio]">
-                                    <ul>
-                                        <li>Black and White</li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-circle"></li>
-                                        <li class="fa fa-circle fsmall"></li>
-                                        <li class="fa fa-search fa-2x"></li>
-                                    </ul>
-                                </a>
-                            </div>
-                        </div> <!-- /.portfolio-thumb -->
-                    </div>
-                </div>
-            </div>
-            <a class="btn btn-large btn-primary" href="#">View More</a>
-        </div>
-        <!--Our Portfolio End-->
-        <div class="clear"></div>
-        <!--Contact Start -->
-        <div class="templatemo_lightgrey" id="templatemo_contact">
-            <div class="templatemo_paracenter">
-                <h2>Contact us</h2></div>
-            <div class="clear"></div>
-            <div class="container">
-                <div class="templatemo_paracenter">
-                    Your suggestions are most important to us :D
-                </div>
-                <div class="clear"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <input name="fullname" type="text" class="form-control" id="fullname" placeholder="Your Name" maxlength="30"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input name="email" type="text" class="form-control" id="email" placeholder="Your Email" maxlength="30"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input name="subject" type="text" class="form-control" id="subject" placeholder="Your Subject" maxlength="40"/>
-                                        </div>
-                                        <div><button type="button" class="btn btn-primary">Send Message</button></div>
-                                    </form>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="txtarea">
-                                        <textarea name="message" rows="10" class="form-control" id="message"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Footer End-->
+        </div>                        
         <!-- Bottom Start -->
         <div class="templatemo_bottom">
             <div class="container">
@@ -523,7 +342,7 @@ This process consists of three major global sections: Sterilization, Fermentatio
         <script type="text/javascript">
             $(function() {
                 $('a[href*=#]:not([href=#])').click(function() {
-                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ){
+                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')) {
                         if (location.hostname == this.hostname) {
                             var target = $(this.hash);
                             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
