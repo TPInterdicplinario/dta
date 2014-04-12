@@ -3,9 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
-    <ui:composition template="/template.xhtml">
+    <ui:composition template="template.xhtml">
         <ui:define name="title">
             <h:outputText value="#{bundle.ListProcessTitle}"></h:outputText>
         </ui:define>
@@ -88,15 +89,15 @@
                                     <f:facet name="header">
                                         <h:outputText value="&nbsp;"/>
                                     </f:facet>
-                            <div class="templatemo_bottom_our">
-                                <div class="right_our">
-                                    <h:commandLink action="#{processController.prepareView}"><div class="fa fa-search soc"/></h:commandLink>
-                                    <h:outputText value="  "/>
-                                    <h:commandLink action="#{processController.prepareEdit}"><div class="fa fa-edit soc"/></h:commandLink>
-                                    <h:outputText value="  "/>
-                                    <h:commandLink action="#{processController.destroy}"><div class="fa fa-eraser soc"/></h:commandLink>
-                                </div>
-                             </div>
+                                    <div class="templatemo_bottom_our">
+                                        <div class="right_our">
+                                            <h:commandLink action="#{processController.prepareView}"><div class="fa fa-search soc"/></h:commandLink>
+                                            <h:outputText value="  "/>
+                                            <h:commandLink action="#{processController.prepareEdit}"><div class="fa fa-edit soc"/></h:commandLink>
+                                            <h:outputText value="  "/>
+                                            <h:commandLink action="#{processController.destroy}"><div class="fa fa-eraser soc"/></h:commandLink>
+                                        </div>
+                                    </div>
                                 </h:column>
                             </h:dataTable>
                         </h:panelGroup>
@@ -105,8 +106,77 @@
                         <br />
                     </h:form>
                 </div>
-            </div>
+                <c:if test="#{processController.currentId != null}">                      
+                    <div class="templatemo_about_box">
+                        <h1>Current Process</h1>
+                    </div>   
+                    <br/><br/><br/>
+                    <div class="container">
+                        <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
+                            <div class="item project-post">
+                                <div class="templatemo_about_box">
+                                    <div class="square_coner">
+                                        <span class="texts-a"><i class="fa fa-key"></i></span>
+                                    </div>
+                                    Code process
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3 hover-box" >
+                                    <div class="inner-hover-box">
+                                        <p> This is the process <h:outputLabel value="#{processController.currentId}" /></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
+                            <div class="item project-post">
+                                <div class="templatemo_about_box">
+                                    <div class="square_coner">
+                                        <span class="texts-a"><i class="fa fa-angle-double-up"></i></span>
+                                    </div>
+                                    Maximum temperature 
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-3 hover-box" >
+                                    <div class="inner-hover-box">
+                                        <p><h:outputLabel value="#{processController.currentMaxTemp}" /> degrees Celsius.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12 templatemo_margintop10">
+                            <div class="item project-post">
+                                <div class="templatemo_about_box">
+                                    <div class="square_coner">
+                                        <span class="texts-a"><i class="fa fa-angle-double-down"></i></span>
+                                    </div>
+                                    Target temperature
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-3 hover-box" >
+                                    <div class="inner-hover-box">
+                                        <p><h:outputLabel value="#{processController.currentTargetTemp}" /> degrees Celsius</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12 templatemo_margintop10">
+                            <div class="item project-post">
+                                <div class="templatemo_about_box">
+                                    <div class="square_coner">
+                                        <span class="texts-a"><i class="fa fa-clock-o"></i></span>
+                                    </div>
+                                    Sterilization time
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-3 hover-box" >
+                                    <div class="inner-hover-box">
+                                        <p><h:outputLabel value="#{processController.currentSterilizationTime}" /> minutes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </c:if> 
+            </div> 
         </ui:define>
+
     </ui:composition>
 
 </html>

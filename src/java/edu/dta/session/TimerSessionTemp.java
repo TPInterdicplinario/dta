@@ -5,7 +5,7 @@
 package edu.dta.session;
 
 import edu.dta.entity.Process;
-import edu.dta.entity.ProcessFacade;
+import edu.dta.facade.ProcessFacade;
 import java.util.Date;
 import javax.ejb.EJB;
 import javax.ejb.Schedule;

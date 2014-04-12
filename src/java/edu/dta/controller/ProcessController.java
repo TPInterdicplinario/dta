@@ -1,5 +1,7 @@
-package edu.dta.entity;
+package edu.dta.controller;
 
+import edu.dta.entity.Process;
+import edu.dta.facade.ProcessFacade;
 import edu.dta.entity.util.JsfUtil;
 import edu.dta.entity.util.PaginationHelper;
 
@@ -23,7 +25,7 @@ public class ProcessController implements Serializable {
     private Process current;
     private DataModel items = null;
     @EJB
-    private edu.dta.entity.ProcessFacade ejbFacade;
+    private edu.dta.facade.ProcessFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -63,17 +65,17 @@ public class ProcessController implements Serializable {
         recreateModel();
         return "List";
     }
+    
+    public String prepareListHome() {
+        recreateModel();
+        return "process/List";
+    }
 
     public String prepareView() {
         current = (Process) getItems().getRowData();
+        current = ejbFacade.find(current.getId());
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
-    }
-    
-    public String prepareIndex() {
-        current = (Process) getProcessByState(Boolean.TRUE);
-        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
-        return "Index";
     }
     
     public String prepareCreate() {
@@ -84,6 +86,10 @@ public class ProcessController implements Serializable {
 
     public String create() {
         try {
+            if(getCurrentId()!=null){
+                JsfUtil.addErrorMessage(ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccuredState"));
+                return null;
+            }
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ProcessCreated"));
             return prepareCreate();
@@ -236,5 +242,29 @@ public class ProcessController implements Serializable {
                 throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Process.class.getName());
             }
         }
+    }
+    
+    public Long getCurrentId(){
+        Process p = ejbFacade.findByState(true);
+        if(p==null)return null;
+        return p.getId();
+    }
+    
+    public Double getCurrentMaxTemp(){
+        Process p = ejbFacade.findByState(true);
+        if(p==null)return null;
+        return p.getMaxTemp();
+    }
+    
+    public Double getCurrentTargetTemp(){
+        Process p = ejbFacade.findByState(true);
+        if(p==null)return null;
+        return p.getTargetTemp();
+    }
+    
+    public Double getCurrentSterilizationTime(){
+        Process p = ejbFacade.findByState(true);
+        if(p==null)return null;
+        return p.getSterilizationTime();
     }
 }

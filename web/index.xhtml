@@ -70,18 +70,20 @@
                                     <a rel="nofollow" href="#"><img src="resources/images/templatemo_logo.png" alt="logo"/></a>
                                 </div>
                             </div>
-                            <div class="col-sm-9 col-md-9 templatemo_col9">
-                                <div id="top-menu">
-                                    <nav class="mainMenu">
-                                        <ul class="nav">
-                                            <li><h:link outcome="/index">Home</h:link></li>
-                                            <li><h:link outcome="/About">About</h:link></li>
-                                            <li><h:link outcome="/process/List">Process</h:link></li>
-                                            <li><h:link outcome="/Contact">Contact</h:link></li>
-                                        </ul>
-                                    </nav>
+                            <h:form>
+                                <div class="col-sm-9 col-md-9 templatemo_col9">
+                                    <div id="top-menu">
+                                        <nav class="mainMenu">
+                                            <ul class="nav">
+                                                <li><h:link outcome="/index">Home</h:link></li>
+                                                <li><h:link outcome="/About">About</h:link></li>
+                                                <li><h:commandLink action="#{processController.prepareListHome}">Process</h:commandLink></li>
+                                                <li><h:link outcome="/Contact">Contact</h:link></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
-                            </div>
+                            </h:form>
                         </div>
                     </div>
                 </div>
@@ -97,79 +99,16 @@
                 <a href="#"><img src="resources/images/slider/img_3_blank.jpg" alt="slide 3" /></a>
 
             </div>
-<!--                <div class="templatemo_caption">
-                    <div class="templatemo_slidetitle">Retina Ready and Responsive</div>
-                    <div class="clear"></div>
-                    <h1>Free HTML5 Template</h1>
-                    <div class="clear"></div>
-                    <p>Smoothy is free <a href="http://www.tooplate.com" target="_parent">template</a> by templatemo. You may download, edit and use this layout for your website. Credit goes to <a rel="nofollow" href="http://unsplash.com">unsplash.com</a> for photos used in this template.</p>
-                    <a class="btn btn-large btn-primary" href="#">Read More</a>
-                </div>-->
-        </header>
-        <div class="templatemo_lightgrey_about" id="templatemo_about">
-            <div class="container">
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="item project-post">
-                        <div class="templatemo_about_box">
-                            <div class="square_coner">
-                                <span class="texts-a"><i class="fa fa-key"></i></span>
-                            </div>
-                            Code process
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 hover-box" >
-                            <div class="inner-hover-box">
-                                <p> This is the process 1</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
-                    <div class="item project-post">
-                        <div class="templatemo_about_box">
-                            <div class="square_coner">
-                                <span class="texts-a"><i class="fa fa-angle-double-up"></i></span>
-                            </div>
-                            Maximum temperature 
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 hover-box" >
-                            <div class="inner-hover-box">
-                                <p>120 degrees Celsius.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12 templatemo_margintop10">
-                    <div class="item project-post">
-                        <div class="templatemo_about_box">
-                            <div class="square_coner">
-                                <span class="texts-a"><i class="fa fa-angle-double-down"></i></span>
-                            </div>
-                            Target temperature
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 hover-box" >
-                            <div class="inner-hover-box">
-                                <p>50 degrees Celsius</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12 templatemo_margintop10">
-                    <div class="item project-post">
-                        <div class="templatemo_about_box">
-                            <div class="square_coner">
-                                <span class="texts-a"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            Sterilization time
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 hover-box" >
-                            <div class="inner-hover-box">
-                                <p>30 minutes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="templatemo_caption">
+                <div class="templatemo_slidetitle">Retina Ready and Responsive</div>
+                <div class="clear"></div>
+                <h1>Free HTML5 Template</h1>
+                <div class="clear"></div>
+                <p>Smoothy is free <a href="http://www.tooplate.com" target="_parent">template</a> by templatemo. You may download, edit and use this layout for your website. Credit goes to <a rel="nofollow" href="http://unsplash.com">unsplash.com</a> for photos used in this template.</p>
             </div>
-        </div>                        
+        </header>
+        <div class="templatemo_footer" >
+        </div>                       
         <!-- Bottom Start -->
         <div class="templatemo_bottom">
             <div class="container">

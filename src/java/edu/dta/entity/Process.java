@@ -41,7 +41,6 @@ public class Process implements Serializable {
     private ArrayList<Double> temp;
     @Temporal(javax.persistence.TemporalType.DATE)    
     private Date initialDate;
-    @Column(unique = true)
     private boolean state;
     
     public Process(){

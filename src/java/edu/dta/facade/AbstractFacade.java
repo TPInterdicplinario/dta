@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.dta.entity;
+package edu.dta.facade;
 
 import java.util.List;
 import javax.persistence.EntityManager;
