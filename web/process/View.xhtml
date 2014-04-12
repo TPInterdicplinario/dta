@@ -3,7 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    
+    <script src="../js/plot.js"></script>
+    <script src="../js/grafica.js"></script>
 
     <ui:composition template="/template.xhtml">
 
@@ -22,7 +27,7 @@
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:form styleClass="smart-green">
+                <h:form id="form" styleClass="smart-green">
                     <h:panelGrid columns="2"  style="margin-left: 80px;">
                         <h:outputLabel value="#{bundle.ViewProcessLabel_id}"/>
                         <h:outputLabel value="#{processController.selected.id}" title="#{bundle.ViewProcessTitle_id}"/>
@@ -36,7 +41,7 @@
                         <h:outputLabel value="#{processController.selected.itemDescription}" title="#{bundle.ViewProcessTitle_itemDescription}"/>
                         <h:outputLabel value="#{bundle.ViewProcessLabel_userDescription}"/>
                         <h:outputLabel value="#{processController.selected.userDescription}" title="#{bundle.ViewProcessTitle_userDescription}"/>
-                        <h:outputLabel value="#{bundle.ViewProcessLabel_state}"/>
+                        <h:outputLabel id="state" value="#{bundle.ViewProcessLabel_state}"/>
                         <h:outputLabel value="#{processController.selected.state}" title="#{bundle.ViewProcessTitle_state}"/>
                         <h:outputLabel value="#{bundle.ViewProcessLabel_initialDate}"/>
                         <h:outputLabel value="#{processController.selected.initialDate}" title="#{bundle.ViewProcessTitle_initialDate}">
@@ -51,10 +56,54 @@
                     <br />
                     <h:commandLink action="#{processController.prepareList}" value="#{bundle.ViewProcessShowAllLink}"/>
                     <br />
-
                 </h:form>
-            </div>
+            </div>            
+            <c:if test="#{processController.selected.state}">
+                
+                <div class="templatemo_about_box">
+                    <canvas width="1000" height="300" id="canv"></canvas>
+                </div>     
+                <script>
+                    var lista = #{processController.selected.temp};
+                    var ilosc = lista.length;
+                    var myp = new MakeDraw();
+                    var data = castData(#{processController.selected.temp}, #{processController.selected.temp.size()});
+                    
+                    myp.id="canv";
+                    myp.plotColor ='green';
+                    myp.gridColor ='rgba(0,0,0,0.05)';
+                    myp.fSize=15;
+                    myp.enumerateP=1;
+                    myp.enumerateH=0;
+                    myp.enumerateV=1;
+                    myp.data = data;
+                    myp.plot();
+//                    var y = setInterval('recalc()',1000);
+                </script>
+            </c:if>
+            <c:if test="#{!processController.selected.state}">
+                <div class="templatemo_about_box">
+                    <canvas width="1000" height="300" id="canv"></canvas>
+                </div>
+                 <script>
+                    var lista = #{processController.selected.temp};
+                    var ilosc = lista.length;
+                    var myp = new MakeDraw();
+                    var data = castData(#{processController.selected.temp}, #{processController.selected.temp.size()});
+                    
+                    myp.id="canv";
+                    myp.plotColor ='green';
+                    myp.gridColor ='rgba(0,0,0,0.05)';
+                    myp.fSize=15;
+                    myp.enumerateP=1;
+                    myp.enumerateH=0;
+                    myp.enumerateV=1;
+                    myp.data = data;
+                    myp.plot();
+                </script>
+            </c:if>
         </ui:define>
     </ui:composition>
+<!--<script>alert('#{processController.selected.temp}');</script>-->
 
 </html>

@@ -24,17 +24,13 @@
         }
         return arr;
     }
-
-        var ilosc = 200;
-        var myp = new MakeDraw();
-        var data = prepData(10,ilosc);
-
-        myp.id="canv";
-        myp.plotColor ='green';
-        myp.gridColor ='rgba(0,0,0,0.05)';
-        myp.fSize=15;
-        myp.enumerateP=0;
-        myp.enumerateH=0;
-        myp.enumerateV=1;
-
-        var y = setInterval('recalc()',20);
+    
+    function castData(list, size){
+        var arr = new Array(size);
+        for(var i=0;i<size;i++){
+            arr[i]=list[i];
+        }
+        return arr;
+    }
+        
+        

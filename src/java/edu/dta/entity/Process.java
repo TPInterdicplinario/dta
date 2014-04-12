@@ -45,6 +45,7 @@ public class Process implements Serializable {
     private boolean state;
     
     public Process(){
+       temp = new ArrayList<Double>();
        initialDate = new Date();
        state=true;
     }
