@@ -24,11 +24,10 @@ public class TimerSessionTemp {
     @Schedule(minute = "*", second = "30", dayOfMonth = "*", month = "*", year = "*", hour = "*", dayOfWeek = "*", persistent = false)
     public void myTimer() {
         Process p = processFacade.findByState(true);
-        if(p!=null){
-            
-            p.getTemp().add(Math.random()*10);
+        if(p!=null){    
+            p.getTemp().add(Math.floor(Math.random()*100));
             processFacade.edit(p);
-            System.out.println(" Updating Temperature at Time: " + new Date());
+            System.out.println("Process "+p.getId()+": Updating Temperature "+p.getTemp().get(p.getTemp().size()-1)+"° at Time: " + new Date());
         }
     }
     // Add business logic below. (Right-click in editor and choose

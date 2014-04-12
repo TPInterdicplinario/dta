@@ -59,29 +59,31 @@
                 </h:form>
             </div>            
             <c:if test="#{processController.selected.state}">
-                
-                <div class="templatemo_about_box">
-                    <canvas width="1000" height="300" id="canv"></canvas>
-                </div>     
-                <script>
-                    var lista = #{processController.selected.temp};
-                    var ilosc = lista.length;
-                    var myp = new MakeDraw();
-                    var data = castData(#{processController.selected.temp}, #{processController.selected.temp.size()});
-                    
-                    myp.id="canv";
-                    myp.plotColor ='green';
-                    myp.gridColor ='rgba(0,0,0,0.05)';
-                    myp.fSize=15;
-                    myp.enumerateP=1;
-                    myp.enumerateH=0;
-                    myp.enumerateV=1;
-                    myp.data = data;
-                    myp.plot();
-//                    var y = setInterval('recalc()',1000);
-                </script>
+                <c:if test="#{processController.selected.temp.size()!=0}">
+                    <div class="templatemo_about_box">
+                        <canvas width="1000" height="300" id="canv"></canvas>
+                    </div>     
+                    <script>
+                        var lista = #{processController.selected.temp};
+                        var ilosc = lista.length;
+                        var myp = new MakeDraw();
+                        var data = castData(#{processController.selected.temp}, #{processController.selected.temp.size()});
+
+                        myp.id="canv";
+                        myp.plotColor ='green';
+                        myp.gridColor ='rgba(0,0,0,0.05)';
+                        myp.fSize=15;
+                        myp.enumerateP=1;
+                        myp.enumerateH=0;
+                        myp.enumerateV=1;
+                        myp.data = data;
+                        myp.plot();
+    //                    var y = setInterval('recalc()',1000);
+                    </script>
+                </c:if>
             </c:if>
             <c:if test="#{!processController.selected.state}">
+                <c:if test="#{processController.selected.temp.size()!=0}">
                 <div class="templatemo_about_box">
                     <canvas width="1000" height="300" id="canv"></canvas>
                 </div>
@@ -101,9 +103,8 @@
                     myp.data = data;
                     myp.plot();
                 </script>
+                </c:if>
             </c:if>
         </ui:define>
     </ui:composition>
-<!--<script>alert('#{processController.selected.temp}');</script>-->
-
 </html>
