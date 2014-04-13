@@ -81,7 +81,7 @@
                         myp.enumerateV = 1;
                         myp.data = data;
                         myp.plot();
-                        //                    var y = setInterval('recalc()',1000);
+                        var y = setInterval('recalc(data,#{processController.currentTemp},ilosc)',1000);
                     </script>
                 </c:if>
             </c:if>

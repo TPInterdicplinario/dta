@@ -6,6 +6,7 @@ import edu.dta.entity.util.JsfUtil;
 import edu.dta.entity.util.PaginationHelper;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -266,5 +267,11 @@ public class ProcessController implements Serializable {
         Process p = ejbFacade.findByState(true);
         if(p==null)return null;
         return p.getSterilizationTime();
+    }
+    
+    public Double getCurrentTemp(){
+        Process p = ejbFacade.findByState(true);
+        if(p==null)return null;
+        return p.getTemp().get(p.getTemp().size()-1);
     }
 }

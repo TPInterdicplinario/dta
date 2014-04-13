@@ -4,15 +4,11 @@
  * and open the template in the editor.
  */
 
-    function recalc(){
-        var randomJump = Math.random()*10;
-        for(var i = 0; i<ilosc;i++){
+    function recalc(data, temp, size){
+        for(var i = 0; i<size;i++){
             data[i-1]=data[i];
         }
-        data[ilosc-1]=data[ilosc-2]+Math.random()*1-0.5;
-        if(randomJump>8){
-            data[ilosc-1]=data[ilosc-2]+Math.random()*10-5;
-        }
+        data[size-1]=temp;
         myp.data = data;
         myp.plot();
     }
