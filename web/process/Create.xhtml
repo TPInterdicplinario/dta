@@ -29,15 +29,19 @@
                         <h:outputLabel value="#{bundle.CreateProcessLabel_sterilizationTime}" for="sterilizationTime" />
                         <h:inputText id="sterilizationTime" value="#{processController.selected.sterilizationTime}" title="#{bundle.CreateProcessTitle_sterilizationTime}" />
                         <h:outputLabel value="#{bundle.CreateProcessLabel_itemDescription}" for="itemDescription" />
-                        <h:inputText id="itemDescription" value="#{processController.selected.itemDescription}" title="#{bundle.CreateProcessTitle_itemDescription}" />
+                        <h:inputTextarea id="itemDescription" value="#{processController.selected.itemDescription}" title="#{bundle.CreateProcessTitle_itemDescription}" />
                         <h:outputLabel value="#{bundle.CreateProcessLabel_userDescription}" for="userDescription" />
                         <h:inputText id="userDescription" value="#{processController.selected.userDescription}" title="#{bundle.CreateProcessTitle_userDescription}" />
+                        <h:outputLabel value="#{bundle.CreateProcessLabel_userAuthorize}" for="userAuthorize" />
+                        <h:inputText id="userAuthorize" value="#{processController.selected.userAuthorize}" title="#{bundle.CreateProcessTitle_userAuthorize}" />
+                        <h:outputLabel value="#{bundle.CreateProcessLabel_hysteresis}" for="hysteresis" />
+                        <h:inputText id="hysteresis" value="#{processController.selected.hysteresis}" title="#{bundle.CreateProcessTitle_hysteresis}" />
                     </h:panelGrid>
                     <br />
-                    <h:commandLink action="#{processController.create}" value="#{bundle.CreateProcessSaveLink}" />
+                    <h:commandLink action="#{processController.create}"><div class="fa fa-check soc"/> #{bundle.CreateProcessSaveLink}</h:commandLink>
                     <br />
                     <br />
-                    <h:commandLink action="#{processController.prepareList}" value="#{bundle.CreateProcessShowAllLink}" immediate="true"/>
+                    <h:commandLink action="#{processController.prepareList}" immediate="true"><div class="fa fa-sign-out soc"/> #{bundle.CreateProcessShowAllLink}</h:commandLink>
                     <br />
                 </h:form>
             </div>

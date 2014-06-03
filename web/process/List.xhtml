@@ -65,12 +65,12 @@
                                     </f:facet>
                                     <h:outputText value="#{item.userDescription}"/>
                                 </h:column>
-                                <h:column>
+<!--                                <h:column>
                                     <f:facet name="header">
                                         <h:outputText value="#{bundle.ListProcessTitle_temp}"/>
                                     </f:facet>
                                     <h:outputText value="#{item.temp}"/>
-                                </h:column>
+                                </h:column>-->
                                 <h:column>
                                     <f:facet name="header">
                                         <h:outputText value="#{bundle.ListProcessTitle_initialDate}"/>
@@ -95,22 +95,27 @@
                                             <h:outputText value="  "/>
                                             <h:commandLink action="#{processController.prepareEdit}"><div class="fa fa-edit soc"/></h:commandLink>
                                             <h:outputText value="  "/>
-                                            <h:commandLink action="#{processController.destroy}"><div class="fa fa-eraser soc"/></h:commandLink>
+                                            <h:commandLink action="#{processController.destroy}"><div class="fa fa-eraser soc" /></h:commandLink>
                                         </div>
                                     </div>
                                 </h:column>
                             </h:dataTable>
                         </h:panelGroup>
                         <br />
-                        <h:commandLink action="#{processController.prepareCreate}" value="#{bundle.ListProcessCreateLink}"/>
+                        <h:commandLink action="#{processController.prepareCreate}"><div class="fa fa-plus-circle soc"/> #{bundle.ListProcessCreateLink}</h:commandLink>
+                        <c:if test="#{processController.currentId != null}"> 
+                            <br/>
+                            <h:commandLink action="#{processController.stopCurrentProcess(processController.currentId)}"><div class="fa fa-stop soc" style="color: red"/> #{bundle.StopCurrentProcessLink}</h:commandLink>
+                        </c:if>   
                         <br />
                     </h:form>
                 </div>
                 <c:if test="#{processController.currentId != null}">                      
                     <div class="templatemo_about_box">
                         <h1>Current Process</h1>
-                    </div>   
+                    </div> 
                     <br/><br/><br/>
+                        
                     <div class="container">
                         <div class="col-xs-6 col-sm-6 col-md-3 templatemo_col12">
                             <div class="item project-post">

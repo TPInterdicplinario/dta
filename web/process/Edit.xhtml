@@ -35,10 +35,10 @@
                         <h:inputText id="state" value="#{processController.selected.state}" title="#{bundle.EditProcessTitle_state}" />
                         
                     </h:panelGrid>
-                    <h:commandLink action="#{processController.update}" value="#{bundle.EditProcessSaveLink}"/>
+                    <h:commandLink action="#{processController.update}"><div class="fa fa-check soc"/> #{bundle.EditProcessSaveLink}</h:commandLink>
                     <br />
                     <br />
-                    <h:link outcome="View" value="#{bundle.EditProcessViewLink}"/>
+                    <h:link outcome="View" ><div class="fa fa-search soc"/> #{bundle.EditProcessViewLink}</h:link>
                     <br />
                 </h:form>
             </div>

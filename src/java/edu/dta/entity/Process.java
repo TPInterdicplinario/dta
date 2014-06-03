@@ -38,10 +38,12 @@ public class Process implements Serializable {
     private double sterilizationTime;
     private String itemDescription;
     private String userDescription;
+    private String userAuthorize;
     private ArrayList<Double> temp;
     @Temporal(javax.persistence.TemporalType.DATE)    
     private Date initialDate;
     private boolean state;
+    private double hysteresis;
     
     public Process(){
        temp = new ArrayList<Double>();
@@ -144,6 +146,22 @@ public class Process implements Serializable {
     @Override
     public String toString() {
         return "edu.temperature.entity.Process[ id=" + id + " ]";
+    }
+
+    public String getUserAuthorize() {
+        return userAuthorize;
+    }
+
+    public void setUserAuthorize(String userAuthorize) {
+        this.userAuthorize = userAuthorize;
+    }
+
+    public double getHysteresis() {
+        return hysteresis;
+    }
+
+    public void setHysteresis(double hysteresis) {
+        this.hysteresis = hysteresis;
     }
     
 }

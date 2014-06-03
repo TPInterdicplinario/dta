@@ -13,7 +13,7 @@
         myp.plot();
     }
 
-    function prepData(range,amount){
+    function prepRandomData(range,amount){
         var arr = new Array(amount);
         for(var i=0;i<amount;i++){
             arr[i]=(Math.random()-0.5)*range;
@@ -28,5 +28,22 @@
         }
         return arr;
     }
-        
-        
+     
+    function staticPlot(data){        
+        myp.data = data;
+        myp.plot();
+    }
+    
+    function dynamicPlot(data, size){
+        alert(data);
+        recalc(myp.data, data, size);
+    }
+    
+    var myp = new MakeDraw();   
+    myp.id = "canv";
+    myp.plotColor = 'green';
+    myp.gridColor = 'rgba(0,0,0,0.05)';
+    myp.fSize = 15;
+    myp.enumerateP = 1;
+    myp.enumerateH = 0;
+    myp.enumerateV = 1;

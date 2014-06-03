@@ -270,8 +270,23 @@ public class ProcessController implements Serializable {
     }
     
     public Double getCurrentTemp(){
+        current = ejbFacade.find(current.getId());
         Process p = ejbFacade.findByState(true);
-        if(p==null)return null;
-        return p.getTemp().get(p.getTemp().size()-1);
+        if(current==null)return null;
+        return current.getTemp().get(current.getTemp().size()-1);
+    }
+    
+    public String stopCurrentProcess(Long id) {
+        try {
+            Process process = ejbFacade.find(id);
+            System.out.println("id "+id);
+            process.setState(false);
+            getFacade().edit(process);
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ProcessUpdated"));
+            return prepareList();
+        } catch (Exception e) {
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            return null;
+        }
     }
 }

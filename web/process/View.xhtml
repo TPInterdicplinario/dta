@@ -52,11 +52,11 @@
                         </h:outputLabel>
                     </h:panelGrid>
                     <br />
-                    <h:commandLink action="#{processController.destroyAndView}" value="#{bundle.ViewProcessDestroyLink}"/>
+                    <h:commandLink action="#{processController.destroyAndView}"><div class="fa fa-eraser soc"/> #{bundle.ViewProcessDestroyLink}</h:commandLink>
                     <br />
-                    <br />
-                    <h:link outcome="Edit" value="#{bundle.ViewProcessEditLink}"/>
-                    <br />
+<!--                    <br />
+                    <h:link outcome="Edit" ><div class="fa fa-edit soc"/> #{bundle.ViewProcessEditLink}</h:link>
+                    <br />-->
                     <h:commandLink action="#{processController.prepareList}" value="#{bundle.ViewProcessShowAllLink}"/>
                     <br />
                 </h:form>
@@ -69,19 +69,10 @@
                     <script>
                         var lista = #{processController.selected.temp};
                         var ilosc = lista.length;
-                        var myp = new MakeDraw();
                         var data = castData(#{processController.selected.temp}, #{processController.selected.temp.size()});
-
-                        myp.id = "canv";
-                        myp.plotColor = 'green';
-                        myp.gridColor = 'rgba(0,0,0,0.05)';
-                        myp.fSize = 15;
-                        myp.enumerateP = 1;
-                        myp.enumerateH = 0;
-                        myp.enumerateV = 1;
-                        myp.data = data;
-                        myp.plot();
-                        var y = setInterval('recalc(data,#{processController.currentTemp},ilosc)',1000);
+                        staticPlot(data); 
+                        
+                        var y = setInterval('dynamicPlot(#{processController.getCurrentTemp()},#{processController.selected.temp.size()})',30000);
                     </script>
                 </c:if>
             </c:if>
@@ -93,18 +84,9 @@
                     <script>
                         var lista = #{processController.selected.temp};
                         var ilosc = lista.length;
-                        var myp = new MakeDraw();
                         var data = castData(#{processController.selected.temp}, #{processController.selected.temp.size()});
 
-                        myp.id = "canv";
-                        myp.plotColor = 'green';
-                        myp.gridColor = 'rgba(0,0,0,0.05)';
-                        myp.fSize = 15;
-                        myp.enumerateP = 1;
-                        myp.enumerateH = 0;
-                        myp.enumerateV = 1;
-                        myp.data = data;
-                        myp.plot();
+                        staticPlot(data);
                     </script>
                 </c:if>
             </c:if>
